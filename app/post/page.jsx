@@ -1,5 +1,18 @@
-export default function PostPage () {
+const fetchPost = () => {
+  return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+}
+
+export default async function PostPage () {
+  const posts = await fetchPost()
   return (
-    <h1> Aquí se veran los post ... </h1>
+    <section>
+      {posts.map(post => (
+        <article key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </article>
+      ))}
+    </section>
   )
 }
