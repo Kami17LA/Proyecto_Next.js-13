@@ -1,5 +1,5 @@
 export default function HomePage () {
   return (
-    <h1> This is our page for now </h1>
+    <p> This is our page for now </p>
   )
 }
