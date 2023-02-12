@@ -1,14 +1,17 @@
-import '../styles/globals.css'
+import { Navigation } from './components/Navigation'
 
 export default function RootLayout ({ children }) {
   return (
-    <html lang='en'>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+    <html>
+      <head>
+        <title> My frist App in Next 13 </title>
+      </head>
+      <body>
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }
+
+/* children -props especial de react :  contiene todo lo que se renderiza hacia abajo de nuestras rutas */
